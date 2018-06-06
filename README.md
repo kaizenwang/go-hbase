@@ -1,6 +1,6 @@
 # Go hbase thrift
 
-使用 [apache thrift](https://github.com/apache/thrift) 编译 [apache hbase](https://github.com/apache/hbase) 中的 [hbase-thrift](https://github.com/apache/hbase/tree/master/hbase-thrift)
+使用 [apache thrift](https://github.com/apache/thrift) 编译 [apache hbase](https://github.com/apache/hbase) 中的 [hbase-thrift](https://github.com/apache/hbase/tree/master/hbase-thrift)
 
 具体可操作 API 可以查看 client 的方法，API 的使用与介绍需要查看 hbase 官网
 项目中的 thrift 与 thrift2 方法有个别不同, 使用哪种取决于 hbase-thrift-server 是使用 thrift 还是 thrift2
