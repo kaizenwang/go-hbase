@@ -20,7 +20,6 @@ import (
 )
 
 func main() {
-
 	trans, err := thrift.NewTSocket(net.JoinHostPort("localhost", "9090"))
 	if err != nil {
 		log.Fatalln(err)
