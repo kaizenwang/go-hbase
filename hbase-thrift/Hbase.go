@@ -19,6 +19,7 @@ var _ = context.Background
 var _ = reflect.DeepEqual
 var _ = bytes.Equal
 
+
 type Text []byte
 
 func TextPtr(v Text) *Text { return &v }
