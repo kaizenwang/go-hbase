@@ -6708,7 +6708,7 @@ func (p *THBaseServiceProcessor) Process(ctx context.Context, iprot, oprot thrif
 	oprot.WriteMessageBegin(name, thrift.EXCEPTION, seqId)
 	x64.Write(oprot)
 	oprot.WriteMessageEnd()
-	oprot.Flush(ctx)
+	oprot.Flush()
 	return false, x64
 
 }
@@ -6725,7 +6725,7 @@ func (p *tHBaseServiceProcessorExists) Process(ctx context.Context, seqId int32,
 		oprot.WriteMessageBegin("exists", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -6742,7 +6742,7 @@ func (p *tHBaseServiceProcessorExists) Process(ctx context.Context, seqId int32,
 			oprot.WriteMessageBegin("exists", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	} else {
@@ -6757,7 +6757,7 @@ func (p *tHBaseServiceProcessorExists) Process(ctx context.Context, seqId int32,
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -6778,7 +6778,7 @@ func (p *tHBaseServiceProcessorExistsAll) Process(ctx context.Context, seqId int
 		oprot.WriteMessageBegin("existsAll", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -6795,7 +6795,7 @@ func (p *tHBaseServiceProcessorExistsAll) Process(ctx context.Context, seqId int
 			oprot.WriteMessageBegin("existsAll", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	} else {
@@ -6810,7 +6810,7 @@ func (p *tHBaseServiceProcessorExistsAll) Process(ctx context.Context, seqId int
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -6831,7 +6831,7 @@ func (p *tHBaseServiceProcessorGet) Process(ctx context.Context, seqId int32, ip
 		oprot.WriteMessageBegin("get", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -6848,7 +6848,7 @@ func (p *tHBaseServiceProcessorGet) Process(ctx context.Context, seqId int32, ip
 			oprot.WriteMessageBegin("get", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	} else {
@@ -6863,7 +6863,7 @@ func (p *tHBaseServiceProcessorGet) Process(ctx context.Context, seqId int32, ip
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -6884,7 +6884,7 @@ func (p *tHBaseServiceProcessorGetMultiple) Process(ctx context.Context, seqId i
 		oprot.WriteMessageBegin("getMultiple", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -6901,7 +6901,7 @@ func (p *tHBaseServiceProcessorGetMultiple) Process(ctx context.Context, seqId i
 			oprot.WriteMessageBegin("getMultiple", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	} else {
@@ -6916,7 +6916,7 @@ func (p *tHBaseServiceProcessorGetMultiple) Process(ctx context.Context, seqId i
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -6937,7 +6937,7 @@ func (p *tHBaseServiceProcessorPut) Process(ctx context.Context, seqId int32, ip
 		oprot.WriteMessageBegin("put", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -6953,7 +6953,7 @@ func (p *tHBaseServiceProcessorPut) Process(ctx context.Context, seqId int32, ip
 			oprot.WriteMessageBegin("put", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	}
@@ -6966,7 +6966,7 @@ func (p *tHBaseServiceProcessorPut) Process(ctx context.Context, seqId int32, ip
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -6987,7 +6987,7 @@ func (p *tHBaseServiceProcessorCheckAndPut) Process(ctx context.Context, seqId i
 		oprot.WriteMessageBegin("checkAndPut", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -7004,7 +7004,7 @@ func (p *tHBaseServiceProcessorCheckAndPut) Process(ctx context.Context, seqId i
 			oprot.WriteMessageBegin("checkAndPut", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	} else {
@@ -7019,7 +7019,7 @@ func (p *tHBaseServiceProcessorCheckAndPut) Process(ctx context.Context, seqId i
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -7040,7 +7040,7 @@ func (p *tHBaseServiceProcessorPutMultiple) Process(ctx context.Context, seqId i
 		oprot.WriteMessageBegin("putMultiple", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -7056,7 +7056,7 @@ func (p *tHBaseServiceProcessorPutMultiple) Process(ctx context.Context, seqId i
 			oprot.WriteMessageBegin("putMultiple", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	}
@@ -7069,7 +7069,7 @@ func (p *tHBaseServiceProcessorPutMultiple) Process(ctx context.Context, seqId i
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -7090,7 +7090,7 @@ func (p *tHBaseServiceProcessorDeleteSingle) Process(ctx context.Context, seqId 
 		oprot.WriteMessageBegin("deleteSingle", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -7106,7 +7106,7 @@ func (p *tHBaseServiceProcessorDeleteSingle) Process(ctx context.Context, seqId 
 			oprot.WriteMessageBegin("deleteSingle", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	}
@@ -7119,7 +7119,7 @@ func (p *tHBaseServiceProcessorDeleteSingle) Process(ctx context.Context, seqId 
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -7140,7 +7140,7 @@ func (p *tHBaseServiceProcessorDeleteMultiple) Process(ctx context.Context, seqI
 		oprot.WriteMessageBegin("deleteMultiple", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -7157,7 +7157,7 @@ func (p *tHBaseServiceProcessorDeleteMultiple) Process(ctx context.Context, seqI
 			oprot.WriteMessageBegin("deleteMultiple", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	} else {
@@ -7172,7 +7172,7 @@ func (p *tHBaseServiceProcessorDeleteMultiple) Process(ctx context.Context, seqI
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -7193,7 +7193,7 @@ func (p *tHBaseServiceProcessorCheckAndDelete) Process(ctx context.Context, seqI
 		oprot.WriteMessageBegin("checkAndDelete", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -7210,7 +7210,7 @@ func (p *tHBaseServiceProcessorCheckAndDelete) Process(ctx context.Context, seqI
 			oprot.WriteMessageBegin("checkAndDelete", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	} else {
@@ -7225,7 +7225,7 @@ func (p *tHBaseServiceProcessorCheckAndDelete) Process(ctx context.Context, seqI
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -7246,7 +7246,7 @@ func (p *tHBaseServiceProcessorIncrement) Process(ctx context.Context, seqId int
 		oprot.WriteMessageBegin("increment", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -7263,7 +7263,7 @@ func (p *tHBaseServiceProcessorIncrement) Process(ctx context.Context, seqId int
 			oprot.WriteMessageBegin("increment", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	} else {
@@ -7278,7 +7278,7 @@ func (p *tHBaseServiceProcessorIncrement) Process(ctx context.Context, seqId int
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -7299,7 +7299,7 @@ func (p *tHBaseServiceProcessorAppend) Process(ctx context.Context, seqId int32,
 		oprot.WriteMessageBegin("append", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -7316,7 +7316,7 @@ func (p *tHBaseServiceProcessorAppend) Process(ctx context.Context, seqId int32,
 			oprot.WriteMessageBegin("append", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	} else {
@@ -7331,7 +7331,7 @@ func (p *tHBaseServiceProcessorAppend) Process(ctx context.Context, seqId int32,
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -7352,7 +7352,7 @@ func (p *tHBaseServiceProcessorOpenScanner) Process(ctx context.Context, seqId i
 		oprot.WriteMessageBegin("openScanner", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -7369,7 +7369,7 @@ func (p *tHBaseServiceProcessorOpenScanner) Process(ctx context.Context, seqId i
 			oprot.WriteMessageBegin("openScanner", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	} else {
@@ -7384,7 +7384,7 @@ func (p *tHBaseServiceProcessorOpenScanner) Process(ctx context.Context, seqId i
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -7405,7 +7405,7 @@ func (p *tHBaseServiceProcessorGetScannerRows) Process(ctx context.Context, seqI
 		oprot.WriteMessageBegin("getScannerRows", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -7424,7 +7424,7 @@ func (p *tHBaseServiceProcessorGetScannerRows) Process(ctx context.Context, seqI
 			oprot.WriteMessageBegin("getScannerRows", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	} else {
@@ -7439,7 +7439,7 @@ func (p *tHBaseServiceProcessorGetScannerRows) Process(ctx context.Context, seqI
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -7460,7 +7460,7 @@ func (p *tHBaseServiceProcessorCloseScanner) Process(ctx context.Context, seqId 
 		oprot.WriteMessageBegin("closeScanner", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -7478,7 +7478,7 @@ func (p *tHBaseServiceProcessorCloseScanner) Process(ctx context.Context, seqId 
 			oprot.WriteMessageBegin("closeScanner", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	}
@@ -7491,7 +7491,7 @@ func (p *tHBaseServiceProcessorCloseScanner) Process(ctx context.Context, seqId 
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -7512,7 +7512,7 @@ func (p *tHBaseServiceProcessorMutateRow) Process(ctx context.Context, seqId int
 		oprot.WriteMessageBegin("mutateRow", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -7528,7 +7528,7 @@ func (p *tHBaseServiceProcessorMutateRow) Process(ctx context.Context, seqId int
 			oprot.WriteMessageBegin("mutateRow", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	}
@@ -7541,7 +7541,7 @@ func (p *tHBaseServiceProcessorMutateRow) Process(ctx context.Context, seqId int
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -7562,7 +7562,7 @@ func (p *tHBaseServiceProcessorGetScannerResults) Process(ctx context.Context, s
 		oprot.WriteMessageBegin("getScannerResults", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -7579,7 +7579,7 @@ func (p *tHBaseServiceProcessorGetScannerResults) Process(ctx context.Context, s
 			oprot.WriteMessageBegin("getScannerResults", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	} else {
@@ -7594,7 +7594,7 @@ func (p *tHBaseServiceProcessorGetScannerResults) Process(ctx context.Context, s
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -7615,7 +7615,7 @@ func (p *tHBaseServiceProcessorGetRegionLocation) Process(ctx context.Context, s
 		oprot.WriteMessageBegin("getRegionLocation", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -7632,7 +7632,7 @@ func (p *tHBaseServiceProcessorGetRegionLocation) Process(ctx context.Context, s
 			oprot.WriteMessageBegin("getRegionLocation", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	} else {
@@ -7647,7 +7647,7 @@ func (p *tHBaseServiceProcessorGetRegionLocation) Process(ctx context.Context, s
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -7668,7 +7668,7 @@ func (p *tHBaseServiceProcessorGetAllRegionLocations) Process(ctx context.Contex
 		oprot.WriteMessageBegin("getAllRegionLocations", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -7685,7 +7685,7 @@ func (p *tHBaseServiceProcessorGetAllRegionLocations) Process(ctx context.Contex
 			oprot.WriteMessageBegin("getAllRegionLocations", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	} else {
@@ -7700,7 +7700,7 @@ func (p *tHBaseServiceProcessorGetAllRegionLocations) Process(ctx context.Contex
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -7721,7 +7721,7 @@ func (p *tHBaseServiceProcessorCheckAndMutate) Process(ctx context.Context, seqI
 		oprot.WriteMessageBegin("checkAndMutate", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -7738,7 +7738,7 @@ func (p *tHBaseServiceProcessorCheckAndMutate) Process(ctx context.Context, seqI
 			oprot.WriteMessageBegin("checkAndMutate", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	} else {
@@ -7753,7 +7753,7 @@ func (p *tHBaseServiceProcessorCheckAndMutate) Process(ctx context.Context, seqI
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {

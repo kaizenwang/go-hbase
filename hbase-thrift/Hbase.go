@@ -19,7 +19,6 @@ var _ = context.Background
 var _ = reflect.DeepEqual
 var _ = bytes.Equal
 
-
 type Text []byte
 
 func TextPtr(v Text) *Text { return &v }
@@ -4876,7 +4875,7 @@ func (p *HbaseProcessor) Process(ctx context.Context, iprot, oprot thrift.TProto
 	oprot.WriteMessageBegin(name, thrift.EXCEPTION, seqId)
 	x96.Write(oprot)
 	oprot.WriteMessageEnd()
-	oprot.Flush(ctx)
+	oprot.Flush()
 	return false, x96
 
 }
@@ -4893,7 +4892,7 @@ func (p *hbaseProcessorEnableTable) Process(ctx context.Context, seqId int32, ip
 		oprot.WriteMessageBegin("enableTable", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -4909,7 +4908,7 @@ func (p *hbaseProcessorEnableTable) Process(ctx context.Context, seqId int32, ip
 			oprot.WriteMessageBegin("enableTable", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	}
@@ -4922,7 +4921,7 @@ func (p *hbaseProcessorEnableTable) Process(ctx context.Context, seqId int32, ip
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -4943,7 +4942,7 @@ func (p *hbaseProcessorDisableTable) Process(ctx context.Context, seqId int32, i
 		oprot.WriteMessageBegin("disableTable", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -4959,7 +4958,7 @@ func (p *hbaseProcessorDisableTable) Process(ctx context.Context, seqId int32, i
 			oprot.WriteMessageBegin("disableTable", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	}
@@ -4972,7 +4971,7 @@ func (p *hbaseProcessorDisableTable) Process(ctx context.Context, seqId int32, i
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -4993,7 +4992,7 @@ func (p *hbaseProcessorIsTableEnabled) Process(ctx context.Context, seqId int32,
 		oprot.WriteMessageBegin("isTableEnabled", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -5010,7 +5009,7 @@ func (p *hbaseProcessorIsTableEnabled) Process(ctx context.Context, seqId int32,
 			oprot.WriteMessageBegin("isTableEnabled", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	} else {
@@ -5025,7 +5024,7 @@ func (p *hbaseProcessorIsTableEnabled) Process(ctx context.Context, seqId int32,
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -5046,7 +5045,7 @@ func (p *hbaseProcessorCompact) Process(ctx context.Context, seqId int32, iprot,
 		oprot.WriteMessageBegin("compact", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -5062,7 +5061,7 @@ func (p *hbaseProcessorCompact) Process(ctx context.Context, seqId int32, iprot,
 			oprot.WriteMessageBegin("compact", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	}
@@ -5075,7 +5074,7 @@ func (p *hbaseProcessorCompact) Process(ctx context.Context, seqId int32, iprot,
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -5096,7 +5095,7 @@ func (p *hbaseProcessorMajorCompact) Process(ctx context.Context, seqId int32, i
 		oprot.WriteMessageBegin("majorCompact", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -5112,7 +5111,7 @@ func (p *hbaseProcessorMajorCompact) Process(ctx context.Context, seqId int32, i
 			oprot.WriteMessageBegin("majorCompact", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	}
@@ -5125,7 +5124,7 @@ func (p *hbaseProcessorMajorCompact) Process(ctx context.Context, seqId int32, i
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -5146,7 +5145,7 @@ func (p *hbaseProcessorGetTableNames) Process(ctx context.Context, seqId int32, 
 		oprot.WriteMessageBegin("getTableNames", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -5163,7 +5162,7 @@ func (p *hbaseProcessorGetTableNames) Process(ctx context.Context, seqId int32, 
 			oprot.WriteMessageBegin("getTableNames", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	} else {
@@ -5178,7 +5177,7 @@ func (p *hbaseProcessorGetTableNames) Process(ctx context.Context, seqId int32, 
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -5199,7 +5198,7 @@ func (p *hbaseProcessorGetColumnDescriptors) Process(ctx context.Context, seqId 
 		oprot.WriteMessageBegin("getColumnDescriptors", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -5216,7 +5215,7 @@ func (p *hbaseProcessorGetColumnDescriptors) Process(ctx context.Context, seqId 
 			oprot.WriteMessageBegin("getColumnDescriptors", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	} else {
@@ -5231,7 +5230,7 @@ func (p *hbaseProcessorGetColumnDescriptors) Process(ctx context.Context, seqId 
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -5252,7 +5251,7 @@ func (p *hbaseProcessorGetTableRegions) Process(ctx context.Context, seqId int32
 		oprot.WriteMessageBegin("getTableRegions", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -5269,7 +5268,7 @@ func (p *hbaseProcessorGetTableRegions) Process(ctx context.Context, seqId int32
 			oprot.WriteMessageBegin("getTableRegions", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	} else {
@@ -5284,7 +5283,7 @@ func (p *hbaseProcessorGetTableRegions) Process(ctx context.Context, seqId int32
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -5305,7 +5304,7 @@ func (p *hbaseProcessorCreateTable) Process(ctx context.Context, seqId int32, ip
 		oprot.WriteMessageBegin("createTable", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -5325,7 +5324,7 @@ func (p *hbaseProcessorCreateTable) Process(ctx context.Context, seqId int32, ip
 			oprot.WriteMessageBegin("createTable", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	}
@@ -5338,7 +5337,7 @@ func (p *hbaseProcessorCreateTable) Process(ctx context.Context, seqId int32, ip
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -5359,7 +5358,7 @@ func (p *hbaseProcessorDeleteTable) Process(ctx context.Context, seqId int32, ip
 		oprot.WriteMessageBegin("deleteTable", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -5375,7 +5374,7 @@ func (p *hbaseProcessorDeleteTable) Process(ctx context.Context, seqId int32, ip
 			oprot.WriteMessageBegin("deleteTable", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	}
@@ -5388,7 +5387,7 @@ func (p *hbaseProcessorDeleteTable) Process(ctx context.Context, seqId int32, ip
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -5409,7 +5408,7 @@ func (p *hbaseProcessorGet) Process(ctx context.Context, seqId int32, iprot, opr
 		oprot.WriteMessageBegin("get", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -5426,7 +5425,7 @@ func (p *hbaseProcessorGet) Process(ctx context.Context, seqId int32, iprot, opr
 			oprot.WriteMessageBegin("get", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	} else {
@@ -5441,7 +5440,7 @@ func (p *hbaseProcessorGet) Process(ctx context.Context, seqId int32, iprot, opr
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -5462,7 +5461,7 @@ func (p *hbaseProcessorGetVer) Process(ctx context.Context, seqId int32, iprot, 
 		oprot.WriteMessageBegin("getVer", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -5479,7 +5478,7 @@ func (p *hbaseProcessorGetVer) Process(ctx context.Context, seqId int32, iprot, 
 			oprot.WriteMessageBegin("getVer", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	} else {
@@ -5494,7 +5493,7 @@ func (p *hbaseProcessorGetVer) Process(ctx context.Context, seqId int32, iprot, 
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -5515,7 +5514,7 @@ func (p *hbaseProcessorGetVerTs) Process(ctx context.Context, seqId int32, iprot
 		oprot.WriteMessageBegin("getVerTs", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -5532,7 +5531,7 @@ func (p *hbaseProcessorGetVerTs) Process(ctx context.Context, seqId int32, iprot
 			oprot.WriteMessageBegin("getVerTs", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	} else {
@@ -5547,7 +5546,7 @@ func (p *hbaseProcessorGetVerTs) Process(ctx context.Context, seqId int32, iprot
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -5568,7 +5567,7 @@ func (p *hbaseProcessorGetRow) Process(ctx context.Context, seqId int32, iprot, 
 		oprot.WriteMessageBegin("getRow", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -5585,7 +5584,7 @@ func (p *hbaseProcessorGetRow) Process(ctx context.Context, seqId int32, iprot, 
 			oprot.WriteMessageBegin("getRow", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	} else {
@@ -5600,7 +5599,7 @@ func (p *hbaseProcessorGetRow) Process(ctx context.Context, seqId int32, iprot, 
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -5621,7 +5620,7 @@ func (p *hbaseProcessorGetRowWithColumns) Process(ctx context.Context, seqId int
 		oprot.WriteMessageBegin("getRowWithColumns", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -5638,7 +5637,7 @@ func (p *hbaseProcessorGetRowWithColumns) Process(ctx context.Context, seqId int
 			oprot.WriteMessageBegin("getRowWithColumns", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	} else {
@@ -5653,7 +5652,7 @@ func (p *hbaseProcessorGetRowWithColumns) Process(ctx context.Context, seqId int
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -5674,7 +5673,7 @@ func (p *hbaseProcessorGetRowTs) Process(ctx context.Context, seqId int32, iprot
 		oprot.WriteMessageBegin("getRowTs", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -5691,7 +5690,7 @@ func (p *hbaseProcessorGetRowTs) Process(ctx context.Context, seqId int32, iprot
 			oprot.WriteMessageBegin("getRowTs", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	} else {
@@ -5706,7 +5705,7 @@ func (p *hbaseProcessorGetRowTs) Process(ctx context.Context, seqId int32, iprot
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -5727,7 +5726,7 @@ func (p *hbaseProcessorGetRowWithColumnsTs) Process(ctx context.Context, seqId i
 		oprot.WriteMessageBegin("getRowWithColumnsTs", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -5744,7 +5743,7 @@ func (p *hbaseProcessorGetRowWithColumnsTs) Process(ctx context.Context, seqId i
 			oprot.WriteMessageBegin("getRowWithColumnsTs", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	} else {
@@ -5759,7 +5758,7 @@ func (p *hbaseProcessorGetRowWithColumnsTs) Process(ctx context.Context, seqId i
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -5780,7 +5779,7 @@ func (p *hbaseProcessorGetRows) Process(ctx context.Context, seqId int32, iprot,
 		oprot.WriteMessageBegin("getRows", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -5797,7 +5796,7 @@ func (p *hbaseProcessorGetRows) Process(ctx context.Context, seqId int32, iprot,
 			oprot.WriteMessageBegin("getRows", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	} else {
@@ -5812,7 +5811,7 @@ func (p *hbaseProcessorGetRows) Process(ctx context.Context, seqId int32, iprot,
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -5833,7 +5832,7 @@ func (p *hbaseProcessorGetRowsWithColumns) Process(ctx context.Context, seqId in
 		oprot.WriteMessageBegin("getRowsWithColumns", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -5850,7 +5849,7 @@ func (p *hbaseProcessorGetRowsWithColumns) Process(ctx context.Context, seqId in
 			oprot.WriteMessageBegin("getRowsWithColumns", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	} else {
@@ -5865,7 +5864,7 @@ func (p *hbaseProcessorGetRowsWithColumns) Process(ctx context.Context, seqId in
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -5886,7 +5885,7 @@ func (p *hbaseProcessorGetRowsTs) Process(ctx context.Context, seqId int32, ipro
 		oprot.WriteMessageBegin("getRowsTs", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -5903,7 +5902,7 @@ func (p *hbaseProcessorGetRowsTs) Process(ctx context.Context, seqId int32, ipro
 			oprot.WriteMessageBegin("getRowsTs", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	} else {
@@ -5918,7 +5917,7 @@ func (p *hbaseProcessorGetRowsTs) Process(ctx context.Context, seqId int32, ipro
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -5939,7 +5938,7 @@ func (p *hbaseProcessorGetRowsWithColumnsTs) Process(ctx context.Context, seqId 
 		oprot.WriteMessageBegin("getRowsWithColumnsTs", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -5956,7 +5955,7 @@ func (p *hbaseProcessorGetRowsWithColumnsTs) Process(ctx context.Context, seqId 
 			oprot.WriteMessageBegin("getRowsWithColumnsTs", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	} else {
@@ -5971,7 +5970,7 @@ func (p *hbaseProcessorGetRowsWithColumnsTs) Process(ctx context.Context, seqId 
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -5992,7 +5991,7 @@ func (p *hbaseProcessorMutateRow) Process(ctx context.Context, seqId int32, ipro
 		oprot.WriteMessageBegin("mutateRow", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -6010,7 +6009,7 @@ func (p *hbaseProcessorMutateRow) Process(ctx context.Context, seqId int32, ipro
 			oprot.WriteMessageBegin("mutateRow", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	}
@@ -6023,7 +6022,7 @@ func (p *hbaseProcessorMutateRow) Process(ctx context.Context, seqId int32, ipro
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -6044,7 +6043,7 @@ func (p *hbaseProcessorMutateRowTs) Process(ctx context.Context, seqId int32, ip
 		oprot.WriteMessageBegin("mutateRowTs", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -6062,7 +6061,7 @@ func (p *hbaseProcessorMutateRowTs) Process(ctx context.Context, seqId int32, ip
 			oprot.WriteMessageBegin("mutateRowTs", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	}
@@ -6075,7 +6074,7 @@ func (p *hbaseProcessorMutateRowTs) Process(ctx context.Context, seqId int32, ip
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -6096,7 +6095,7 @@ func (p *hbaseProcessorMutateRows) Process(ctx context.Context, seqId int32, ipr
 		oprot.WriteMessageBegin("mutateRows", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -6114,7 +6113,7 @@ func (p *hbaseProcessorMutateRows) Process(ctx context.Context, seqId int32, ipr
 			oprot.WriteMessageBegin("mutateRows", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	}
@@ -6127,7 +6126,7 @@ func (p *hbaseProcessorMutateRows) Process(ctx context.Context, seqId int32, ipr
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -6148,7 +6147,7 @@ func (p *hbaseProcessorMutateRowsTs) Process(ctx context.Context, seqId int32, i
 		oprot.WriteMessageBegin("mutateRowsTs", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -6166,7 +6165,7 @@ func (p *hbaseProcessorMutateRowsTs) Process(ctx context.Context, seqId int32, i
 			oprot.WriteMessageBegin("mutateRowsTs", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	}
@@ -6179,7 +6178,7 @@ func (p *hbaseProcessorMutateRowsTs) Process(ctx context.Context, seqId int32, i
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -6200,7 +6199,7 @@ func (p *hbaseProcessorAtomicIncrement) Process(ctx context.Context, seqId int32
 		oprot.WriteMessageBegin("atomicIncrement", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -6219,7 +6218,7 @@ func (p *hbaseProcessorAtomicIncrement) Process(ctx context.Context, seqId int32
 			oprot.WriteMessageBegin("atomicIncrement", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	} else {
@@ -6234,7 +6233,7 @@ func (p *hbaseProcessorAtomicIncrement) Process(ctx context.Context, seqId int32
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -6255,7 +6254,7 @@ func (p *hbaseProcessorDeleteAll) Process(ctx context.Context, seqId int32, ipro
 		oprot.WriteMessageBegin("deleteAll", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -6271,7 +6270,7 @@ func (p *hbaseProcessorDeleteAll) Process(ctx context.Context, seqId int32, ipro
 			oprot.WriteMessageBegin("deleteAll", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	}
@@ -6284,7 +6283,7 @@ func (p *hbaseProcessorDeleteAll) Process(ctx context.Context, seqId int32, ipro
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -6305,7 +6304,7 @@ func (p *hbaseProcessorDeleteAllTs) Process(ctx context.Context, seqId int32, ip
 		oprot.WriteMessageBegin("deleteAllTs", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -6321,7 +6320,7 @@ func (p *hbaseProcessorDeleteAllTs) Process(ctx context.Context, seqId int32, ip
 			oprot.WriteMessageBegin("deleteAllTs", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	}
@@ -6334,7 +6333,7 @@ func (p *hbaseProcessorDeleteAllTs) Process(ctx context.Context, seqId int32, ip
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -6355,7 +6354,7 @@ func (p *hbaseProcessorDeleteAllRow) Process(ctx context.Context, seqId int32, i
 		oprot.WriteMessageBegin("deleteAllRow", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -6371,7 +6370,7 @@ func (p *hbaseProcessorDeleteAllRow) Process(ctx context.Context, seqId int32, i
 			oprot.WriteMessageBegin("deleteAllRow", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	}
@@ -6384,7 +6383,7 @@ func (p *hbaseProcessorDeleteAllRow) Process(ctx context.Context, seqId int32, i
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -6405,7 +6404,7 @@ func (p *hbaseProcessorIncrement) Process(ctx context.Context, seqId int32, ipro
 		oprot.WriteMessageBegin("increment", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -6421,7 +6420,7 @@ func (p *hbaseProcessorIncrement) Process(ctx context.Context, seqId int32, ipro
 			oprot.WriteMessageBegin("increment", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	}
@@ -6434,7 +6433,7 @@ func (p *hbaseProcessorIncrement) Process(ctx context.Context, seqId int32, ipro
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -6455,7 +6454,7 @@ func (p *hbaseProcessorIncrementRows) Process(ctx context.Context, seqId int32, 
 		oprot.WriteMessageBegin("incrementRows", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -6471,7 +6470,7 @@ func (p *hbaseProcessorIncrementRows) Process(ctx context.Context, seqId int32, 
 			oprot.WriteMessageBegin("incrementRows", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	}
@@ -6484,7 +6483,7 @@ func (p *hbaseProcessorIncrementRows) Process(ctx context.Context, seqId int32, 
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -6505,7 +6504,7 @@ func (p *hbaseProcessorDeleteAllRowTs) Process(ctx context.Context, seqId int32,
 		oprot.WriteMessageBegin("deleteAllRowTs", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -6521,7 +6520,7 @@ func (p *hbaseProcessorDeleteAllRowTs) Process(ctx context.Context, seqId int32,
 			oprot.WriteMessageBegin("deleteAllRowTs", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	}
@@ -6534,7 +6533,7 @@ func (p *hbaseProcessorDeleteAllRowTs) Process(ctx context.Context, seqId int32,
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -6555,7 +6554,7 @@ func (p *hbaseProcessorScannerOpenWithScan) Process(ctx context.Context, seqId i
 		oprot.WriteMessageBegin("scannerOpenWithScan", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -6572,7 +6571,7 @@ func (p *hbaseProcessorScannerOpenWithScan) Process(ctx context.Context, seqId i
 			oprot.WriteMessageBegin("scannerOpenWithScan", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	} else {
@@ -6587,7 +6586,7 @@ func (p *hbaseProcessorScannerOpenWithScan) Process(ctx context.Context, seqId i
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -6608,7 +6607,7 @@ func (p *hbaseProcessorScannerOpen) Process(ctx context.Context, seqId int32, ip
 		oprot.WriteMessageBegin("scannerOpen", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -6625,7 +6624,7 @@ func (p *hbaseProcessorScannerOpen) Process(ctx context.Context, seqId int32, ip
 			oprot.WriteMessageBegin("scannerOpen", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	} else {
@@ -6640,7 +6639,7 @@ func (p *hbaseProcessorScannerOpen) Process(ctx context.Context, seqId int32, ip
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -6661,7 +6660,7 @@ func (p *hbaseProcessorScannerOpenWithStop) Process(ctx context.Context, seqId i
 		oprot.WriteMessageBegin("scannerOpenWithStop", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -6678,7 +6677,7 @@ func (p *hbaseProcessorScannerOpenWithStop) Process(ctx context.Context, seqId i
 			oprot.WriteMessageBegin("scannerOpenWithStop", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	} else {
@@ -6693,7 +6692,7 @@ func (p *hbaseProcessorScannerOpenWithStop) Process(ctx context.Context, seqId i
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -6714,7 +6713,7 @@ func (p *hbaseProcessorScannerOpenWithPrefix) Process(ctx context.Context, seqId
 		oprot.WriteMessageBegin("scannerOpenWithPrefix", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -6731,7 +6730,7 @@ func (p *hbaseProcessorScannerOpenWithPrefix) Process(ctx context.Context, seqId
 			oprot.WriteMessageBegin("scannerOpenWithPrefix", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	} else {
@@ -6746,7 +6745,7 @@ func (p *hbaseProcessorScannerOpenWithPrefix) Process(ctx context.Context, seqId
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -6767,7 +6766,7 @@ func (p *hbaseProcessorScannerOpenTs) Process(ctx context.Context, seqId int32, 
 		oprot.WriteMessageBegin("scannerOpenTs", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -6784,7 +6783,7 @@ func (p *hbaseProcessorScannerOpenTs) Process(ctx context.Context, seqId int32, 
 			oprot.WriteMessageBegin("scannerOpenTs", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	} else {
@@ -6799,7 +6798,7 @@ func (p *hbaseProcessorScannerOpenTs) Process(ctx context.Context, seqId int32, 
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -6820,7 +6819,7 @@ func (p *hbaseProcessorScannerOpenWithStopTs) Process(ctx context.Context, seqId
 		oprot.WriteMessageBegin("scannerOpenWithStopTs", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -6837,7 +6836,7 @@ func (p *hbaseProcessorScannerOpenWithStopTs) Process(ctx context.Context, seqId
 			oprot.WriteMessageBegin("scannerOpenWithStopTs", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	} else {
@@ -6852,7 +6851,7 @@ func (p *hbaseProcessorScannerOpenWithStopTs) Process(ctx context.Context, seqId
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -6873,7 +6872,7 @@ func (p *hbaseProcessorScannerGet) Process(ctx context.Context, seqId int32, ipr
 		oprot.WriteMessageBegin("scannerGet", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -6892,7 +6891,7 @@ func (p *hbaseProcessorScannerGet) Process(ctx context.Context, seqId int32, ipr
 			oprot.WriteMessageBegin("scannerGet", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	} else {
@@ -6907,7 +6906,7 @@ func (p *hbaseProcessorScannerGet) Process(ctx context.Context, seqId int32, ipr
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -6928,7 +6927,7 @@ func (p *hbaseProcessorScannerGetList) Process(ctx context.Context, seqId int32,
 		oprot.WriteMessageBegin("scannerGetList", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -6947,7 +6946,7 @@ func (p *hbaseProcessorScannerGetList) Process(ctx context.Context, seqId int32,
 			oprot.WriteMessageBegin("scannerGetList", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	} else {
@@ -6962,7 +6961,7 @@ func (p *hbaseProcessorScannerGetList) Process(ctx context.Context, seqId int32,
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -6983,7 +6982,7 @@ func (p *hbaseProcessorScannerClose) Process(ctx context.Context, seqId int32, i
 		oprot.WriteMessageBegin("scannerClose", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -7001,7 +7000,7 @@ func (p *hbaseProcessorScannerClose) Process(ctx context.Context, seqId int32, i
 			oprot.WriteMessageBegin("scannerClose", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	}
@@ -7014,7 +7013,7 @@ func (p *hbaseProcessorScannerClose) Process(ctx context.Context, seqId int32, i
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -7035,7 +7034,7 @@ func (p *hbaseProcessorGetRegionInfo) Process(ctx context.Context, seqId int32, 
 		oprot.WriteMessageBegin("getRegionInfo", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -7052,7 +7051,7 @@ func (p *hbaseProcessorGetRegionInfo) Process(ctx context.Context, seqId int32, 
 			oprot.WriteMessageBegin("getRegionInfo", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	} else {
@@ -7067,7 +7066,7 @@ func (p *hbaseProcessorGetRegionInfo) Process(ctx context.Context, seqId int32, 
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -7088,7 +7087,7 @@ func (p *hbaseProcessorAppend) Process(ctx context.Context, seqId int32, iprot, 
 		oprot.WriteMessageBegin("append", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -7105,7 +7104,7 @@ func (p *hbaseProcessorAppend) Process(ctx context.Context, seqId int32, iprot, 
 			oprot.WriteMessageBegin("append", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	} else {
@@ -7120,7 +7119,7 @@ func (p *hbaseProcessorAppend) Process(ctx context.Context, seqId int32, iprot, 
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -7141,7 +7140,7 @@ func (p *hbaseProcessorCheckAndPut) Process(ctx context.Context, seqId int32, ip
 		oprot.WriteMessageBegin("checkAndPut", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush(ctx)
+		oprot.Flush()
 		return false, err
 	}
 
@@ -7160,7 +7159,7 @@ func (p *hbaseProcessorCheckAndPut) Process(ctx context.Context, seqId int32, ip
 			oprot.WriteMessageBegin("checkAndPut", thrift.EXCEPTION, seqId)
 			x.Write(oprot)
 			oprot.WriteMessageEnd()
-			oprot.Flush(ctx)
+			oprot.Flush()
 			return true, err2
 		}
 	} else {
@@ -7175,7 +7174,7 @@ func (p *hbaseProcessorCheckAndPut) Process(ctx context.Context, seqId int32, ip
 	if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
+	if err2 = oprot.Flush(); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
